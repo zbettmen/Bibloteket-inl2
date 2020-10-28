@@ -41,7 +41,7 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    @PutMapping
+
     public void update(String id, Book book){
         if(!bookRepository.existsById(id)){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);

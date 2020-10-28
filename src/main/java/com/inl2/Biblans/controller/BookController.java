@@ -39,14 +39,14 @@ public class BookController {
     @Secured({"ROLE_ADMIN"})
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void update(@PathVariable String id, @ModelAttribute Book book){
+    public void update( @PathVariable String id, @RequestBody   Book book){
         bookService.update(id, book);
     }
 
     @Secured("ROLE_ADMIN")
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void deleteBook(@PathVariable String id) {
+    public void deleteBook(@PathVariable @RequestBody String id) {
         try{
             bookRepo.deleteById(id);
         } catch(NumberFormatException ex){

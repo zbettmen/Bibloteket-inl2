@@ -18,11 +18,8 @@ public class Book implements Serializable {
     private String genre;
     private boolean isAvailable;
 
-
     public Book() {
     }
-
-
 
 
 }
