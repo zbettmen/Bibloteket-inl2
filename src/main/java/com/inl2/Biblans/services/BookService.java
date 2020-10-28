@@ -37,7 +37,6 @@ public class BookService {
 
     @PutMapping
     public Book save(Book book){
-        log.info("Saving");
         return bookRepository.save(book);
     }
 

@@ -30,7 +30,7 @@ public class BookController {
         return ResponseEntity.ok(bookService.findAll(title));
     }
 
-    @Secured({"ROLE_ADMIN"})
+    @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @PostMapping
     public ResponseEntity<Book> save(@RequestBody Book book){
         return ResponseEntity.ok(bookService.save(book));
