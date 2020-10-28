@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Arrays;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,7 +28,6 @@ public class UserService {
 
     @GetMapping
     public List<User> findAll(String user){
-        log.info("Requesting all users, or matching search");
         var users = userRepository.findAll();
 
         if(user!=null){
